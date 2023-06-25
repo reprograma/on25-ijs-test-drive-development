@@ -1,4 +1,5 @@
 function generateCombinations(word)
+//faz todas as cobinações possiveis de uma palavra
 {
     const chars = [];
     for (let x = 0, y = 1; x < word.length; x++, y++)
