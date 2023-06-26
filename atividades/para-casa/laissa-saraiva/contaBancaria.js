@@ -10,13 +10,13 @@ let accountLimit = bankAccount.accountLimit;
 // saque
 function withdrawMoney(withdraw) {
   if(withdraw <= balance) {
-    balance = (balance - withdraw);
+    balance -= withdraw;
     return balance;
   } else if (withdraw > balance && withdraw <= accountLimit) {
 // =====================================================
 //  return "Vc entrou no Limite especial."
- balance = (balance - withdraw);
- return balance;
+    balance -= withdraw;  
+    return balance;
  // ===================================================== 
   } else {
     return "Unauthorized operation.";
@@ -37,38 +37,40 @@ function accountBalance() {
 // console.log(accountBalance());
 
 // Realizar Deposito 
-function depositCash(deposit){
-  balance = (balance + deposit)
-  return balance;
+function depositCash(deposit) {
+  return (balance += deposit);
 }
 
-// console.log(depositCash(10000));
 // console.log(`O saldo atual é ${balance}`);
+// console.log(depositCash(1000));
+// console.log(depositCash(300));
+// console.log(`O saldo atual é ${balance}`);
+
 // console.log(bankAccount); // retorna oobjeto
 
 
 // Ajuste em limite bancário
 
-function adjustAccountLimit(ajuste, value) {
-  switch(ajuste) {
-    case "increase": 
-    accountLimit = accountLimit + value;
-    return accountLimit;
-    break;
+function adjustAccountLimit(action, value) {
+  switch (action) {
+    case "increase":
+      return (accountLimit += value);
+      break;
     case "decrease":
-      accountLimit = accountLimit - value;
-      return accountLimit;
-    break;
+      return (accountLimit -= value);
+      break;
     case "cancel":
       delete bankAccount.accountLimit;
-      return "Seu Limite adicional foi desativado."
+      return "Seu Limite adicional foi desativado.";
   }
 }
 
 // console.log(bankAccount); // retorna oobjeto
+// console.log(adjustAccountLimit("increase", 10));
+// console.log(accountLimit); // retorna oobjeto
+// console.log(adjustAccountLimit("decrease", 50));
 // console.log(adjustAccountLimit("cancel")); 
 // console.log(bankAccount); // retorna oobjeto
 
-// console.log(adjustAccountLimit("aumentar", 10));
 
   module.exports = {withdrawMoney, accountBalance, depositCash, adjustAccountLimit}
