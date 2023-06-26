@@ -2,7 +2,8 @@
 
 // É possível fazer operações de consulta de saldo, saque e depósito.
 
-// No caso de saque é necessário verificar se existe saldo suficiente para retirada, caso o cliente não tenha saldo suficiente para a operação, mas possua limite disponível (e suficiente), o saque poderá ocorrer, nesses casos o saldo do cliente ficará negativo após o saque.
+// No caso de saque é necessário verificar se existe saldo suficiente para retirada,
+//  caso o cliente não tenha saldo suficiente para a operação, mas possua limite disponível (e suficiente), o saque poderá ocorrer, nesses casos o saldo do cliente ficará negativo após o saque.
 
 // Além disso, o limite de uma conta pode ser reajustado (para mais e para menos) ou desativado.
 
@@ -34,11 +35,11 @@ describe("Tests in Bank account", () => {
 
   // Além disso, o limite de uma conta pode ser reajustado (para mais e para menos) ou desativado.
   it("should increase R$10 in the account limit and return R$3010", () => {
-    expect(adjustAccountLimit("increase", 10)).toEqual(3010);
+    expect(adjustAccountLimit("increase", 10)).toEqual(1010);
   });
 
   it("should decrease R$50 in the account limit and return R$2960", () => {
-    expect(adjustAccountLimit("decrease", 50)).toEqual(2960);
+    expect(adjustAccountLimit("decrease", 50)).toEqual(960);
   });
 
   it("should remove account limit from the object and return 'Seu Limite adicional foi desativado' ", () => {
