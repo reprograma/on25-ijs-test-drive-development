@@ -8,11 +8,11 @@
 
 // Use a abordagem Red - Green - Refactor para desenvolver essa aplicação.
 
-const {withdrawMoney, accountBalance, depositCash, adjustAccountLimit,} = require("./contaBancaria");
+const {withdrawMoney, showAccountBalance, depositCash, adjustAccountLimit,} = require("./contaBancaria");
 describe("Tests in Bank account", () => {
   it("should show the account balance R$2000", () => {
-    expect(accountBalance("balance")).toEqual(
-      "O saldo atual de sua conta é R$2000."
+    expect(showAccountBalance("balance")).toEqual(
+      "Your current account balance is R$2000."
     );
   });
 
@@ -43,7 +43,7 @@ describe("Tests in Bank account", () => {
 
   it("should remove account limit from the object and return 'Seu Limite adicional foi desativado' ", () => {
     expect(adjustAccountLimit("cancel")).toEqual(
-      "Seu Limite adicional foi desativado."
+      "Your additional limit has been disabled."
     );
   });
 });
