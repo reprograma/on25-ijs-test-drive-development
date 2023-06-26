@@ -12,12 +12,14 @@ function withdrawMoney(withdraw) {
   if(withdraw <= balance) {
     balance = (balance - withdraw);
     return balance;
-  } else if (withdraw > balance && withdraw < accountLimit) {
+  } else if (withdraw > balance && withdraw <= accountLimit) {
 // =====================================================
- return "Vc entrou no Limite especial."
+//  return "Vc entrou no Limite especial."
+ balance = (balance - withdraw);
+ return balance;
  // ===================================================== 
   } else {
-    return "Operação negada";
+    return "Unauthorized operation.";
   }
 }
 
@@ -63,9 +65,9 @@ function adjustAccountLimit(ajuste, value) {
   }
 }
 
-console.log(bankAccount); // retorna oobjeto
-console.log(adjustAccountLimit("cancel")); 
-console.log(bankAccount); // retorna oobjeto
+// console.log(bankAccount); // retorna oobjeto
+// console.log(adjustAccountLimit("cancel")); 
+// console.log(bankAccount); // retorna oobjeto
 
 // console.log(adjustAccountLimit("aumentar", 10));
 
