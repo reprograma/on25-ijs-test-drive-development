@@ -2,4 +2,5 @@
  (centavos) será dado em moedas. A função deve receber o valor do troco, e um
  array com as moedas disponíveis. */
 
+ 
 
