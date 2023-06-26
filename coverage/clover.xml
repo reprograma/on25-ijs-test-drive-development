@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1687789311492" clover="3.2.0">
+  <project timestamp="1687789311492" name="All files">
+    <metrics statements="48" coveredstatements="47" conditionals="19" coveredconditionals="18" methods="10" coveredmethods="10" elements="77" coveredelements="75" complexity="0" loc="48" ncloc="48" packages="3" files="7" classes="7"/>
+    <package name="para-casa.roberta-amaro">
+      <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <file name="contaBancaria.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-casa\roberta-amaro\contaBancaria.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="para-sala">
+      <metrics statements="33" coveredstatements="32" conditionals="19" coveredconditionals="18" methods="5" coveredmethods="5"/>
+      <file name="checarObjeto.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-sala\checarObjeto.js">
+        <metrics statements="9" coveredstatements="8" conditionals="5" coveredconditionals="4" methods="2" coveredmethods="2"/>
+        <line num="2" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="17" count="1" type="stmt"/>
+      </file>
+      <file name="conversorTemp.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-sala\conversorTemp.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+      <file name="generateCombinations.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-sala\generateCombinations.js">
+        <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="24" type="cond" truecount="2" falsecount="0"/>
+        <line num="17" count="12" type="stmt"/>
+        <line num="20" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="7" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+      </file>
+      <file name="jokenpo.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-sala\jokenpo.js">
+        <metrics statements="6" coveredstatements="6" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+        <line num="3" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="7" count="8" type="cond" truecount="8" falsecount="0"/>
+        <line num="10" count="6" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="para-sala.TDD - atividades">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="revertString.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-sala\TDD - atividades\revertString.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="14" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="soma.js" path="C:\Users\betaa\Documents\www\reprograma\on25-ijs-test-drive-development\atividades\para-sala\TDD - atividades\soma.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

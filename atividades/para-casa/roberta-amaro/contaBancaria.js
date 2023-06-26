@@ -1,7 +1,7 @@
 // 1. Contruir Objeto conta bancaria contendo: nome, saldo e limite da conta
 // 2. Criar teste para consultar saldo
-// 2. Criar teste para saque
-// 2. Criar teste para depósito
+// 3. Criar teste para saque
+// 4. Criar teste para depósito
 
 const bankAccount = {
   nome: "Clara",
@@ -13,21 +13,24 @@ let balance = bankAccount.saldo;
 
 function withdraw(withdraw) {
   balance = balance - withdraw;
+
   return balance;
 }
 
-function totalBalance(balance) {
-  return balance;
+//saldo atualizado
+let saldoAtualizado = bankAccount.saldo;
+
+function updatedBalance(saque) {
+  let novoSaldo = saldoAtualizado - saque;
+  return novoSaldo;
 }
 
-let deposit = bankAccount.saldo + 500;
+let novoSaldo = 900;
 
 function makeDeposit() {
-  balance = balance + deposit;
-  /*  console.log(
-    `Depósito de R$${value} realizado na conta de ${bankAccount.nome}. Saldo atual: R$${bankAccount.saldo}`
-  ); */
+  deposit = novoSaldo + 500;
+
   return deposit;
 }
 
-module.exports = { withdraw, totalBalance, makeDeposit };
+module.exports = { withdraw, updatedBalance, makeDeposit };

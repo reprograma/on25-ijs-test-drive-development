@@ -2,28 +2,28 @@
 titular, o saldo e o limite da conta. 
 
 É possível fazer operações de consulta de saldo,
- saque e depósito. 
- 
- No caso de saque é necessário verificar se existe saldo suficiente para
- retirada, 
- 
- caso o cliente não tenha saldo suficiente para a operação, mas possua limite disponível
-  (e suficiente), o saque poderá ocorrer, nesses casos o saldo do cliente ficará negativo após
-  o saque.
-  
-  Além disso, o limite de uma conta pode ser reajustado (para mais e para menos)
-  ou desativado. ]]Use a abordagem Red - Green - Refactor para desenvolver essa aplicação.*/
+saque e depósito. 
 
-const { withdraw, totalBalance, makeDeposit } = require("./contaBancaria");
+No caso de saque é necessário verificar se existe saldo suficiente para
+retirada, 
 
-describe("bank account function", () => {
-  it("should withdraw amount from the account when sufficient balance", () => {
+caso o cliente não tenha saldo suficiente para a operação, mas possua limite disponível
+(e suficiente), o saque poderá ocorrer, nesses casos o saldo do cliente ficará negativo após
+o saque.
+
+Além disso, o limite de uma conta pode ser reajustado (para mais e para menos)
+ou desativado. ]]Use a abordagem Red - Green - Refactor para desenvolver essa aplicação.*/
+
+const { withdraw, updatedBalance, makeDeposit } = require("./contaBancaria");
+
+describe("Test if Bank Account Function works", () => {
+  it("should withdraw amount from the account", () => {
     expect(withdraw(100)).toEqual(900);
   });
   it("should show the exact amount of the bank account", () => {
-    expect(totalBalance(1000)).toEqual(1000);
+    expect(updatedBalance(900)).toEqual(100);
   });
   it("should deposit amount into the account", () => {
-    expect(makeDeposit(500)).toEqual(1500);
+    expect(makeDeposit(500)).toEqual(1400);
   });
 });
