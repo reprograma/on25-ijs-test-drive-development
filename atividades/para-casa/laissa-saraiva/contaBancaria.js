@@ -44,4 +44,29 @@ function depositCash(deposit){
 // console.log(`O saldo atual é ${balance}`);
 // console.log(bankAccount); // retorna oobjeto
 
-  module.exports = {withdrawMoney, accountBalance, depositCash}
+
+// Ajuste em limite bancário
+
+function adjustAccountLimit(ajuste, value) {
+  switch(ajuste) {
+    case "increase": 
+    accountLimit = accountLimit + value;
+    return accountLimit;
+    break;
+    case "decrease":
+      accountLimit = accountLimit - value;
+      return accountLimit;
+    break;
+    case "cancel":
+      delete bankAccount.accountLimit;
+      return "Seu Limite adicional foi desativado."
+  }
+}
+
+console.log(bankAccount); // retorna oobjeto
+console.log(adjustAccountLimit("cancel")); 
+console.log(bankAccount); // retorna oobjeto
+
+// console.log(adjustAccountLimit("aumentar", 10));
+
+  module.exports = {withdrawMoney, accountBalance, depositCash, adjustAccountLimit}

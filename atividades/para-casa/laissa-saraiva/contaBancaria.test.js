@@ -9,7 +9,7 @@
 // Use a abordagem Red - Green - Refactor para desenvolver essa aplicação.
 
 // import
-const {withdrawMoney, accountBalance, depositCash} = require('./contaBancaria');
+const {withdrawMoney, accountBalance, depositCash, adjustAccountLimit} = require('./contaBancaria');
 describe("Tests in Bank account", ()=> {
 	it("should verify if the withdrawMoney() is working ", ()=> {
 		expect(withdrawMoney(100)).toEqual(1900)
@@ -23,7 +23,16 @@ describe("Tests in Bank account", ()=> {
 		expect(depositCash(1000)).toEqual(2900);
 	})
 
-  it("", ()=> {
-    expect().toEqual();
+  // Além disso, o limite de uma conta pode ser reajustado (para mais e para menos) ou desativado. 
+  it("should increase the mount of account limmit", ()=> {
+    expect(adjustAccountLimit("increase", 10)).toEqual(3010);
+  })
+  
+  it("should decrease the mount of account limmit", ()=> {
+    expect(adjustAccountLimit("decrease", 10)).toEqual(3000);
+  })
+
+  it("should remove account limit from the object ", ()=> {
+    expect(adjustAccountLimit("cancel")).toEqual("Seu Limite adicional foi desativado.");
   })
 })
