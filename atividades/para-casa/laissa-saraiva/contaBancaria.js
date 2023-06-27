@@ -1,5 +1,5 @@
 const bankAccount = {
-  titular: "Laissa",
+  accountOwner: "Laissa",
   balance: 2000,
   accountLimit: 3000
 };
