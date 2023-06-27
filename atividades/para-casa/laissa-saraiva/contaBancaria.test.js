@@ -13,9 +13,14 @@ Use a abordagem Red - Green - Refactor para desenvolver essa aplicação. */
 
 /*=========================================================================
 Os testes abaixo devem ser testados de uma única vez, pois as funções de saque e deposito, alteram os valores de saldo e limite de conta.
-===========++==============================================================*/
+=========================================================================*/
 
-const {withdrawMoney, showAccountBalance, depositCash, adjustAccountLimit,} = require("./contaBancaria");
+const {
+  withdrawMoney,
+  showAccountBalance,
+  depositCash,
+  adjustAccountLimit,
+} = require("./contaBancaria");
 describe("Tests in Bank account", () => {
   it("should show the account balance R$2000", () => {
     expect(showAccountBalance("balance")).toEqual(

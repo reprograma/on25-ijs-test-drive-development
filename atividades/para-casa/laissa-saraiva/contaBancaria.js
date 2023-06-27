@@ -1,7 +1,7 @@
 const bankAccount = {
   accountOwner: "Laissa",
   balance: 2000,
-  accountLimit: 3000
+  accountLimit: 3000,
 };
 
 let balance = bankAccount.balance;
@@ -14,7 +14,7 @@ function withdrawMoney(withdraw) {
   } else {
     if (withdraw <= accountLimit) {
       balance -= withdraw;
-      accountLimit -= withdraw
+      accountLimit -= withdraw;
       return balance;
     } else {
       return "Unauthorized operation.";
@@ -33,10 +33,10 @@ function depositCash(deposit) {
 function adjustAccountLimit(action, value) {
   switch (action) {
     case "increase":
-      return accountLimit += value;
+      return (accountLimit += value);
       break;
     case "decrease":
-      return accountLimit -= value;
+      return (accountLimit -= value);
       break;
     case "cancel":
       delete bankAccount.accountLimit;
@@ -44,4 +44,9 @@ function adjustAccountLimit(action, value) {
   }
 }
 
-module.exports = {withdrawMoney, showAccountBalance, depositCash, adjustAccountLimit};
+module.exports = {
+  withdrawMoney,
+  showAccountBalance,
+  depositCash,
+  adjustAccountLimit,
+};
