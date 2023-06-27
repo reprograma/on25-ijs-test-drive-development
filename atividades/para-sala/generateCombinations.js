@@ -4,6 +4,7 @@ function generateCombinations(word)
     for (let x = 0, y = 1; x < word.length; x++, y++)
     {
         chars[x] = word.substring(x, y);
+        console.log(chars[x])
     }
     const combinations = [];
     let temp = "";
