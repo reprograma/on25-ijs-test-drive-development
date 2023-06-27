@@ -17,11 +17,11 @@ describe("Tests in Bank account", () => {
     );
   });
 
-  it("should withdraw R$500 and return R$1500", () => {
+  it("should withdraw R$500 and return the account balance R$1500", () => {
     expect(withdrawMoney(500)).toEqual(1500);
   });
 
-  it("should withdraw R$2000 and return R$-500", () => {
+  it("should withdraw R$2000 and return the account balance R$-500", () => {
     expect(withdrawMoney(2000)).toEqual(-500);
   });
 
@@ -29,16 +29,16 @@ describe("Tests in Bank account", () => {
     expect(withdrawMoney(5000)).toEqual("Unauthorized operation.");
   });
 
-  it("should deposit R$1000 and return R$500", () => {
+  it("should deposit R$1000 and return the account balance R$500", () => {
     expect(depositCash(1000)).toEqual(500);
   });
 
   // Além disso, o limite de uma conta pode ser reajustado (para mais e para menos) ou desativado.
-  it("should increase R$10 in the account limit and return R$3010", () => {
+  it("should increase R$10 in the account limit and return R$1010", () => {
     expect(adjustAccountLimit("increase", 10)).toEqual(1010);
   });
 
-  it("should decrease R$50 in the account limit and return R$2960", () => {
+  it("should decrease R$50 in the account limit and return R$960", () => {
     expect(adjustAccountLimit("decrease", 50)).toEqual(960);
   });
 

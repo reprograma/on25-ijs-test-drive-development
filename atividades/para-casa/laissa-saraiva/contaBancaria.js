@@ -13,12 +13,9 @@ function withdrawMoney(withdraw) {
     return balance;
   } else {
     if (withdraw <= accountLimit) {
-      // =====================================================
-      //  return "Vc entrou no Limite especial."
       balance -= withdraw;
       accountLimit -= withdraw
       return balance;
-      // =====================================================
     } else {
       return "Unauthorized operation.";
     }
@@ -36,10 +33,10 @@ function depositCash(deposit) {
 function adjustAccountLimit(action, value) {
   switch (action) {
     case "increase":
-      return (accountLimit += value);
+      return accountLimit += value;
       break;
     case "decrease":
-      return (accountLimit -= value);
+      return accountLimit -= value;
       break;
     case "cancel":
       delete bankAccount.accountLimit;
