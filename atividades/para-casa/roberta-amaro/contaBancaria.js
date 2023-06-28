@@ -9,8 +9,6 @@ const bankAccount = {
   balance: 1000,
   limite: 3000,
 };
-//consulta saldo
-// SAQUE
 
 let balance = bankAccount.balance;
 let limit = bankAccount.limite;
@@ -35,20 +33,6 @@ function withdraw(withdraw) {
 console.log(withdraw(150));
 console.log(withdraw(1005));
 console.log(withdraw(3005));
-/* function withdraw(withdraw) {
-
-  balance = balance - withdraw;
-  return balance;
-} */
-
-//withdraw
-/* Verificar se existe saldo suficiente para retirada */
-
-/* let balance = bankAccount.saldo;
-function withdraw(withdraw) {
-  balance = balance - withdraw;
-  return balance;
-} */
 
 //deposito
 function makeDeposit(amount) {
