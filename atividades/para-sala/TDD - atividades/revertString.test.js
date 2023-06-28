@@ -1,9 +1,11 @@
-describe("RevertString function", () => {
-    test("'casa' => 'asac'", () => {
-        expect(reverse('casa')).toEqual('asac');
-    });
+const reverse = require("./reverseString");
 
-    test("'javascript' => 'tpircsavaj'", () => {
-        expect(reverse('javascript')).toEqual('tpircsavaj');
-    });
+describe("RevertString function", () => {
+  test("'casa' => 'asac'", () => {
+    expect(reverse("casa")).toEqual("asac");
+  });
+
+  test("'javascript' => 'tpircsavaj'", () => {
+    expect(reverse("javascript")).toEqual("tpircsavaj");
+  });
 });

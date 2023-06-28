@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1687632604516" clover="3.2.0">
+  <project timestamp="1687632604516" name="All files">
+    <metrics statements="17" coveredstatements="16" conditionals="14" coveredconditionals="13" methods="3" coveredmethods="3" elements="34" coveredelements="32" complexity="0" loc="17" ncloc="17" packages="1" files="3" classes="3"/>
+    <file name="conversorTemp.js" path="C:\Users\broberta\on25-ijs-test-drive-development\atividades\para-sala\conversorTemp.js">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+    </file>
+    <file name="jokenpo.js" path="C:\Users\broberta\on25-ijs-test-drive-development\atividades\para-sala\jokenpo.js">
+      <metrics statements="6" coveredstatements="5" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+      <line num="3" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="7" count="4" type="cond" truecount="7" falsecount="1"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="13" count="0" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+    </file>
+    <file name="numeroPar.js" path="C:\Users\broberta\on25-ijs-test-drive-development\atividades\para-sala\numeroPar.js">
+      <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="4" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
