@@ -1,7 +1,17 @@
-const fibonacci = (indice) => {
-    if(indice <= 1) return 1;
+function fibonacciSeq(index, tam) {
+    
+                     //0, 1
+    const fibonacci = [0, 1];
 
-    return fibonacci(indice - 1) + fibonacci(indice - 2);
+    for(let i = 2; i <= index + tam; i++ ) {
+        fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+        //[0, 1, 1, 2, 3, 5]
+        //[]
+    }
+                           //6         13
+    return fibonacci.slice(index, index +tam);
 }
 
-module.exports = fibonacci
+console.log(fibonacciSeq(6,7))
+
+module.exports = fibonacciSeq
