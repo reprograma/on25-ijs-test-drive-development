@@ -2,13 +2,15 @@
  retorne a Sequência de Fibonacci iniciando no índice e finalizando depois do tamanho
 especificado para o array */
 
-[1,2,3,5,8]
+// [1,2,3,5,8]
 
-const fibonacci = require("./fibonacci")
+
+
+const fibonacciSeq = require("./fibonacci")
 describe("Fibonacci Function", ()=> {
   test("should check fibonati", () => {
-    const output = 6
+    const output = [8, 13, 21, 34, 55, 89, 144]
 
-    expect().toEqual(output)
+    expect(fibonacciSeq(6,7)).toEqual(output)
   })
 })
