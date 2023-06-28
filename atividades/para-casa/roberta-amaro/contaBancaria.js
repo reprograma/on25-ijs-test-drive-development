@@ -37,10 +37,6 @@ function makeDeposit(amount) {
   return deposit;
 }
 
-//LIMITE
-
-//aumento limite
-
 function increasedLimit(increase) {
   limit = limit + increase;
   return limit;
@@ -50,8 +46,6 @@ function decreasedLimit(increase) {
   limit = limit - increase;
   return limit;
 }
-
-//desativar limite
 
 function desactivatedLimit(conta) {
   conta.limite = null;
