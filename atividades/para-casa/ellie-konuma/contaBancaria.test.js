@@ -68,13 +68,6 @@ describe("check limit", () => {
 });
 
 describe("turn on the limit", () => {
-  // beforEach(() => {
-  //   accounts;
-  // });
-
-  // afterEach(() => {
-  //   accounts;
-  // });
   it("should return limit = 0 on the account of tracer", () => {
     expect(enableLimit("Tracer", accounts)).toEqual([
       { name: "Isa", balance: 1000, limit: 1000 },
@@ -123,11 +116,6 @@ describe("withdraw from account", () => {
     expect(draft("Isa", 1500, accounts)).toEqual({
       ok: { balance: -500, limit: 500 },
     });
-
-    // ou
-
-    // expect(checkBalance("Isa")).toEqual({ ok: -500 });
-    // expect(checkLimit("Isa")).toEqual({ ok: 500 });
   });
 
   it("make a draft of 2000 in account of Isa, and should return ok and the balance = -1000 and limit = 0", () => {
