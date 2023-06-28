@@ -1,5 +1,4 @@
 const {
-  accounts,
   findAccount,
   hasError,
   checkBalance,
@@ -10,14 +9,33 @@ const {
   draft,
 } = require("./contaBancaria");
 
+const accounts = [
+  {
+    name: "Isa",
+    balance: 1000,
+    limit: 1000,
+  },
+  {
+    name: "Tracer",
+    balance: 1000,
+    limit: null,
+  },
+  {
+    name: "Marceline",
+    balance: 1100,
+    limit: 0,
+  },
+];
+
 describe("check if the account exists", () => {
+  beforeEach(() => accounts);
   it("should return the account", () => {
-    expect(findAccount("Isa")).toEqual({
+    expect(findAccount("Isa", accounts)).toEqual({
       ok: { name: "Isa", balance: 1000, limit: 1000 },
     });
   });
   it("should return error", () => {
-    expect(findAccount("Fernando")).toEqual({
+    expect(findAccount("Fernando", acc)).toEqual({
       error: "account not found",
     });
   });

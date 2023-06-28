@@ -1,30 +1,30 @@
-let accounts = [
-  {
-    name: "Isa",
-    balance: 1000,
-    limit: 1000,
-  },
-  {
-    name: "Tracer",
-    balance: 1000,
-    limit: null,
-  },
-  {
-    name: "Marceline",
-    balance: 1100,
-    limit: 0,
-  },
-];
+// let accounts = [
+//   {
+//     name: "Isa",
+//     balance: 1000,
+//     limit: 1000,
+//   },
+//   {
+//     name: "Tracer",
+//     balance: 1000,
+//     limit: null,
+//   },
+//   {
+//     name: "Marceline",
+//     balance: 1100,
+//     limit: 0,
+//   },
+// ];
 
-const findAccount = (name) => {
+const findAccount = (name, accounts) => {
   const acc = accounts.find((acc) => acc.name == name);
   return acc ? { ok: acc } : { error: "account not found" };
 };
 
 const hasError = (res) => (Object.keys(res)[0] === "error" ? true : false);
 
-const checkBalance = (name) => {
-  const res = findAccount(name);
+const checkBalance = (name, acc) => {
+  const res = findAccount(name, acc);
   if (hasError(res)) return res;
 
   let { balance } = res.ok;
@@ -32,8 +32,8 @@ const checkBalance = (name) => {
   return { ok: balance };
 };
 
-const checkLimit = (name) => {
-  const res = findAccount(name);
+const checkLimit = (name, acc) => {
+  const res = findAccount(name, acc);
   if (hasError(res)) return res;
 
   let { limit } = res.ok;
@@ -44,8 +44,8 @@ const checkLimit = (name) => {
   return { ok: limit };
 };
 
-const enableLimit = (name) => {
-  const acc = findAccount(name);
+const enableLimit = (name, accounts) => {
+  const acc = findAccount(name, accounts);
   if (acc.ok.limit === null) {
     accounts = accounts.map((acc) => {
       if (acc.name === name) acc.limit = 0;
@@ -57,8 +57,8 @@ const enableLimit = (name) => {
   return { error: "limit it is already activated" };
 };
 
-const disableLimit = (name) => {
-  const acc = findAccount(name);
+const disableLimit = (name, accounts) => {
+  const acc = findAccount(name, accounts);
   if (acc.ok.limit === null) {
     return { error: "limit it is already disabled" };
   }
@@ -69,8 +69,8 @@ const disableLimit = (name) => {
   return accounts;
 };
 
-const ajustLimit = (name, value) => {
-  const acc = findAccount(name);
+const ajustLimit = (name, value, accounts) => {
+  const acc = findAccount(name, accounts);
   if (acc.ok.limit !== null) {
     accounts = accounts.map((acc) => {
       if (acc.name === name) acc.limit = value;
@@ -80,8 +80,8 @@ const ajustLimit = (name, value) => {
   }
 };
 
-const draft = (name, value) => {
-  const balanceRes = checkBalance(name);
+const draft = (name, value, acc) => {
+  const balanceRes = checkBalance(name, acc);
   if (hasError(balanceRes)) return balanceRes;
 
   const balance = balanceRes.ok;
@@ -90,7 +90,7 @@ const draft = (name, value) => {
     return { ok: { balance: balance - value } }; // aqui tem que ser retornado o value
   } // tem que mudar no obj da conta em uso
 
-  const limitRes = checkLimit(name);
+  const limitRes = checkLimit(name, acc);
   if (hasError(limitRes)) return limitRes;
 
   const limit = limitRes.ok;
@@ -106,7 +106,6 @@ const draft = (name, value) => {
 };
 
 module.exports = {
-  accounts,
   findAccount,
   hasError,
   checkBalance,
