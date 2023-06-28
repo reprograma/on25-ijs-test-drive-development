@@ -1,36 +1,86 @@
 // 1. Contruir Objeto conta bancaria contendo: nome, saldo e limite da conta
 // 2. Criar teste para consultar saldo
 // 3. Criar teste para saque
+// 4. Verificar se existe saldo suficiente para retirada, caso não tenha && possua limite suficiemte === sque podera ocorre e ficara negativo
 // 4. Criar teste para depósito
 
 const bankAccount = {
-  nome: "Clara",
-  saldo: 1000,
+  accountName: "Clara",
+  balance: 1000,
   limite: 3000,
 };
+//consulta saldo
+// SAQUE
 
-let balance = bankAccount.saldo;
+let balance = bankAccount.balance;
+let limit = bankAccount.limite;
 
-function withdraw(withdraw) {
-  balance = balance - withdraw;
-
+function checkBalance() {
+  //balance = bankAccount.saldo;
   return balance;
 }
+//console.log(checkBalance());
 
-//saldo atualizado
-let saldoAtualizado = bankAccount.saldo;
-
-function updatedBalance(saque) {
-  let novoSaldo = saldoAtualizado - saque;
-  return novoSaldo;
+function withdraw(withdraw) {
+  if (withdraw <= balance) {
+    return "Saque efetuado";
+  } else {
+    if (withdraw <= limit) {
+      return "Saldo negativo e limite disponível";
+    } else {
+      return "Operação Negada";
+    }
+  }
 }
+console.log(withdraw(150));
+console.log(withdraw(1005));
+console.log(withdraw(3005));
+/* function withdraw(withdraw) {
 
-let novoSaldo = 900;
+  balance = balance - withdraw;
+  return balance;
+} */
 
-function makeDeposit() {
-  deposit = novoSaldo + 500;
+//withdraw
+/* Verificar se existe saldo suficiente para retirada */
 
+/* let balance = bankAccount.saldo;
+function withdraw(withdraw) {
+  balance = balance - withdraw;
+  return balance;
+} */
+
+//deposito
+function makeDeposit(amount) {
+  deposit = bankAccount.saldo + amount;
   return deposit;
 }
 
-module.exports = { withdraw, updatedBalance, makeDeposit };
+//LIMITE
+
+//aumento limite
+
+function increasedLimit(increase) {
+  limit = limit + increase;
+  return limit;
+}
+
+function decreasedLimit(increase) {
+  limit = limit - increase;
+  return limit;
+}
+
+//desativar limite
+
+function desactivatedLimit(conta) {
+  conta.limite = null;
+}
+
+module.exports = {
+  withdraw,
+  checkBalance,
+  makeDeposit,
+  increasedLimit,
+  decreasedLimit,
+  desactivatedLimit,
+};
