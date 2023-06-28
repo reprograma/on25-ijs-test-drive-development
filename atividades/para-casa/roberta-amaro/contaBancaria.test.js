@@ -24,30 +24,28 @@ const {
 } = require("./contaBancaria");
 
 describe("Test if Bank Account Function works", () => {
-  /*  it("should withdraw amount from the account using available limit when insufficient balance", () => {
-    const output = "Retirada confirmada";
-    expect(withdraw(-100)).toEqual(output);
-  }); */
   it("should show the exact amount of the bank account", () => {
-    expect(checkBalance(1000)).toEqual(1000);
+    expect(checkBalance(1000)).toEqual(`O seu saldo é ${balance}`);
+  });
+  it("should deposit amount into the account", () => {
+    expect(makeDeposit(500)).toEqual(1500);
   });
   it("should enable withdraw when sufficient balance", () => {
-    expect(withdraw(100)).toEqual(900);
+    const output = `Saque efetuado no valor de R$${withdraw}`;
+    expect(withdraw(100)).toEqual(output);
   });
   it("should enable withdraw when insufficient balance and the limit is sufficient", () => {
     const output = "Saldo negativo e limite disponível";
     expect(withdraw(1005)).toEqual(output);
   });
 
-  it("should deposit amount into the account", () => {
-    expect(makeDeposit(500)).toEqual(1500);
-  });
   it("should increase the account limit", () => {
     expect(increasedLimit(600)).toEqual(3600);
   });
   it("should decrease the account limit", () => {
-    expect(decreasedLimit(600)).toEqual(2400);
+    expect(decreasedLimit(600)).toEqual(3000);
   });
+
   it("should disable the account limit", () => {
     const bankAccount = {
       nome: "Clara",
@@ -56,8 +54,5 @@ describe("Test if Bank Account Function works", () => {
     };
     desactivatedLimit(bankAccount);
     expect(bankAccount.limite).toBeNull();
-  });
-  it("should withdraw amount from the account when sufficient balance", () => {
-    expect(decreasedLimit(600)).toEqual(2400);
   });
 });

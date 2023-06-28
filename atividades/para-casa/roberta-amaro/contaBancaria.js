@@ -14,14 +14,13 @@ let balance = bankAccount.balance;
 let limit = bankAccount.limite;
 
 function checkBalance() {
-  //balance = bankAccount.saldo;
   return balance;
 }
-//console.log(checkBalance());
+console.log(checkBalance());
 
 function withdraw(withdraw) {
   if (withdraw <= balance) {
-    return "Saque efetuado";
+    return `Saque efetuado no valor de R$${withdraw}`;
   } else {
     if (withdraw <= limit) {
       return "Saldo negativo e limite disponível";
@@ -36,7 +35,7 @@ console.log(withdraw(3005));
 
 //deposito
 function makeDeposit(amount) {
-  deposit = bankAccount.saldo + amount;
+  deposit = bankAccount.balance + amount;
   return deposit;
 }
 
