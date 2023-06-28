@@ -1,21 +1,3 @@
-// let accounts = [
-//   {
-//     name: "Isa",
-//     balance: 1000,
-//     limit: 1000,
-//   },
-//   {
-//     name: "Tracer",
-//     balance: 1000,
-//     limit: null,
-//   },
-//   {
-//     name: "Marceline",
-//     balance: 1100,
-//     limit: 0,
-//   },
-// ];
-
 const findAccount = (name, accounts) => {
   const acc = accounts.find((acc) => acc.name == name);
   return acc ? { ok: acc } : { error: "account not found" };
@@ -23,8 +5,8 @@ const findAccount = (name, accounts) => {
 
 const hasError = (res) => (Object.keys(res)[0] === "error" ? true : false);
 
-const checkBalance = (name, acc) => {
-  const res = findAccount(name, acc);
+const checkBalance = (name, accounts) => {
+  const res = findAccount(name, accounts);
   if (hasError(res)) return res;
 
   let { balance } = res.ok;
@@ -32,8 +14,8 @@ const checkBalance = (name, acc) => {
   return { ok: balance };
 };
 
-const checkLimit = (name, acc) => {
-  const res = findAccount(name, acc);
+const checkLimit = (name, accounts) => {
+  const res = findAccount(name, accounts);
   if (hasError(res)) return res;
 
   let { limit } = res.ok;
@@ -80,17 +62,17 @@ const ajustLimit = (name, value, accounts) => {
   }
 };
 
-const draft = (name, value, acc) => {
-  const balanceRes = checkBalance(name, acc);
+const draft = (name, value, accounts) => {
+  const balanceRes = checkBalance(name, accounts);
   if (hasError(balanceRes)) return balanceRes;
 
   const balance = balanceRes.ok;
 
   if (balance >= value) {
-    return { ok: { balance: balance - value } }; // aqui tem que ser retornado o value
-  } // tem que mudar no obj da conta em uso
+    return { ok: { balance: balance - value } };
+  }
 
-  const limitRes = checkLimit(name, acc);
+  const limitRes = checkLimit(name, accounts);
   if (hasError(limitRes)) return limitRes;
 
   const limit = limitRes.ok;
