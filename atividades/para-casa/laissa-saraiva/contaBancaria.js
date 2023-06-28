@@ -48,5 +48,5 @@ module.exports = {
   withdrawMoney,
   showAccountBalance,
   depositCash,
-  adjustAccountLimit,
+  adjustAccountLimit
 };
