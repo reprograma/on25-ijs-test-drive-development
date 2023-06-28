@@ -1,44 +1,58 @@
-function checksBalance(obj) {
-  return obj.saldo + obj.limite 
-}
+class Account {
+  constructor(nome, saldo, limite) {
+    this.nome = nome
+    this.saldo = saldo
+    this.limite = limite
+    this.balance = this.checksBalance()
+  }
 
-function cashout(obj, saque) {
-  const balance = checksBalance(obj)
+  checksBalance() {
+    return this.saldo + this.limite
+  }
 
-  if(balance < saque) return "Saldo insuficiente"
+  cashout(cash) {
+    if(this.balance < cash) return "Saldo insuficiente"
   
-  if(saque > obj.saldo) {
-    const 
-      difference = saque - obj.saldo,
-      limite = obj.limite - difference
+    if(cash > this.saldo) {
+      const 
+        difference = cash - this.saldo,
+        limite = this.limite - difference
 
-    return {
-      ...obj,
-      "saldo": -difference,
-      "limite": limite
+      return {
+        "nome": this.nome,
+        "saldo": -difference,
+        "limite": limite
+      }
+    } else if(cash <= this.saldo) {
+      const difference = this.saldo - cash
+
+      return {
+        "nome": this.nome,
+        "saldo": difference,
+        "limite": this.limite
+      }
     }
-  } else if(saque <= obj.saldo) {
-    const difference = obj.saldo - saque
+  }
 
+  changeLimit(newLimit) {
+    if(!newLimit) return {
+      "nome": this.nome,
+      "saldo": this.saldo
+    }
+    else return {
+      "nome": this.nome,
+      "saldo": this.saldo,
+      "limite": newLimit
+    }
+  }
+
+  cashDeposit(deposit) {
     return {
-      ...obj,
-      "saldo": difference
+      "nome": this.nome,
+      "saldo": this.saldo + deposit,
+      "limite": this.limite
     }
   }
 }
 
-function changeLimit(obj, newLimit) {
-  return {
-    ...obj,
-    "limite": newLimit
-  }
-}
-
-function cashDeposit(obj, deposit) {
-  return {
-    ...obj,
-    "saldo": obj.saldo + deposit
-  }
-}
-
-module.exports = { checksBalance, cashout, changeLimit, cashDeposit }
+module.exports = Account
