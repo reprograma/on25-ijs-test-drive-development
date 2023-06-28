@@ -16,24 +16,22 @@ let limit = bankAccount.limite;
 function checkBalance() {
   return balance;
 }
-console.log(checkBalance());
 
 function withdraw(withdraw) {
   if (withdraw <= balance) {
-    return `Saque efetuado no valor de R$${withdraw}`;
+    balance = balance - withdraw;
+    return "Saque efetuado";
   } else {
     if (withdraw <= limit) {
+      balance = balance - limit;
+      //return balance;
       return "Saldo negativo e limite disponível";
     } else {
       return "Operação Negada";
     }
   }
 }
-console.log(withdraw(150));
-console.log(withdraw(1005));
-console.log(withdraw(3005));
 
-//deposito
 function makeDeposit(amount) {
   deposit = bankAccount.balance + amount;
   return deposit;

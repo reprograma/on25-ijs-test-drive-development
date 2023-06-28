@@ -25,13 +25,13 @@ const {
 
 describe("Test if Bank Account Function works", () => {
   it("should show the exact amount of the bank account", () => {
-    expect(checkBalance(1000)).toEqual(`O seu saldo é ${balance}`);
+    expect(checkBalance(1000)).toEqual(1000);
   });
   it("should deposit amount into the account", () => {
     expect(makeDeposit(500)).toEqual(1500);
   });
   it("should enable withdraw when sufficient balance", () => {
-    const output = `Saque efetuado no valor de R$${withdraw}`;
+    const output = "Saque efetuado";
     expect(withdraw(100)).toEqual(output);
   });
   it("should enable withdraw when insufficient balance and the limit is sufficient", () => {
