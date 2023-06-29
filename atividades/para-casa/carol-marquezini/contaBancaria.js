@@ -21,21 +21,26 @@ const limiteMax = 300;
 const limiteMin = 0;
 
 function depositar(conta, valorDeposito) {
-  if(conta.saldo > 0 && conta.limite == limiteMax){
-      conta.saldo += valorDeposito
-      return conta
-  } else if (conta.limite < limiteMax){
-      conta.limite += valorDeposito
-      return conta
-  } else {
-    if (conta.limite < limiteMax && conta.saldo <= 0){
-          conta.limite += valorDeposito
-          return conta
-      } else {
-          conta.saldo += valorDeposito
-          return conta
-      }
-  }
+    //limite não utilizado, então altera só o saldo
+    if (conta.limite == limiteMax) {
+        conta.saldo += valorDeposito
+        return conta;
+    }
+
+    let limiteUtilizado = limiteMax - conta.limite
+
+    // Limite foi utilizado e valorDeposito é menor que o limite utilizado, então altera só o limite
+    if (valorDeposito < limiteUtilizado) {
+        conta.limite += valorDeposito
+        return conta
+    }
+
+    //Alterar limite com o valor do limite utilizado e o restante para atualizar o saldo
+    let valorDepositoEmSaldo = valorDeposito - limiteUtilizado
+
+    conta.saldo += valorDepositoEmSaldo
+    conta.limite += limiteUtilizado
+    return conta
 }
 
 function sacar(conta, valorSaque) {
@@ -50,9 +55,7 @@ function sacar(conta, valorSaque) {
 }
 
 function consultarSaldo(conta) {
-
     return conta.saldo + conta.limite
-
 }
 
 
@@ -60,6 +63,7 @@ module.exports = {
     ContaBancaria,
     consultarSaldo,
     sacar,
+    depositar,
     depositar
 }
 
