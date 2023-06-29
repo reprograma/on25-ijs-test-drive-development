@@ -1,5 +1,4 @@
 const reverse = require("./reverseString");
-
 describe("RevertString function", () => {
   test("'casa' => 'asac'", () => {
     expect(reverse("casa")).toEqual("asac");

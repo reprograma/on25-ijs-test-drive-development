@@ -8,62 +8,64 @@ a operação, mas possua limite disponível (e suficiente), o saque poderá ocor
 //Além disso, o limite de uma conta pode ser reajustado (para mais e para menos) ou desativado.
 //Use a abordagem Red - Green - Refactor para desenvolver essa aplicação.
 
-/*const {
-  bankAccount,
-  //accountWithdrawal,
-  //depositInTheAccount,
-  //limitChange,
-} = require("./contaBancaria");
-
-describe("When to query account details", () => {
-  it("should check if there is a balance for withdrawal ", () => {
-    const withdrawal = 100;
-    const result = 500 - withdrawal;
-
-    expect(bankAccount(withdrawal)).toBe("Saque feito", +result);
-  });
-});*/
-
 const bankAccount = require("./contaBancaria");
 
+// Cria uma nova instância da classe bankAccount
 let account = new bankAccount("Bruna", 2000, 2000);
 
 describe("When to query account details", () => {
+  // Verifica se o saldo da conta é o esperado
   it("should consult the account balance", () => {
     expect(account.balance).toEqual(2000);
   });
+
+  // Verifica se o limite da conta é o esperado
   it("should consult the account limit", () => {
     expect(account.limit).toEqual(2000);
   });
+
+  // Verifica se o limite da conta pode ser desativado
   it("should check if limit is disabled", () => {
-    account.statusLimit(false);
+    account.setStatus(false);
     expect(account.status).toEqual(false);
   });
+
+  // Verifica se o limite da conta pode ser ativado
   it("should check if limit is enabled", () => {
-    account.statusLimit(true);
+    account.setStatus(true);
     expect(account.status).toEqual(true);
   });
+
+  // Verifica se o limite da conta pode ser alterado
   it("should consult the new limit of the account", () => {
-    account.newLimit(5000);
+    account.setLimit(5000);
     expect(account.limit).toEqual(5000);
   });
+
+  // Verifica se um saque pode ser realizado com o limite ativado
   it("should refer to new account limit after withdrawal with activated limit", () => {
-    account.statusLimit(true);
-    account.withdrawValue(2500);
+    account.setStatus(true);
+    account.withdraw(2500);
     expect(account.balance).toEqual(-500);
   });
+
+  // Verifica se um saque não pode ser realizado com o limite desativado
   it("should consult balance after withdrawing with deactivated limit", () => {
-    account.statusLimit(false);
+    account.setStatus(false);
     expect(account.balance).toEqual(-500);
-    expect(account.withdrawValue(500)).toEqual(
+    expect(account.withdraw(500)).toEqual(
       "Insufficient balance or disabled limit"
     );
   });
+
+  // Verifica se um depósito pode ser realizado
   it("should confirm the deposit", () => {
-    account.putValue(2500);
+    account.deposit(2500);
     expect(account.balance).toEqual(2000);
   });
+
+  // Verifica se um depósito inválido é rejeitado
   it("should check invalid deposit", () => {
-    expect(account.putValue(-1)).toEqual("invalid value");
+    expect(account.deposit(-1)).toEqual("invalid value");
   });
 });

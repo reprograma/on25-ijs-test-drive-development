@@ -6,38 +6,42 @@ class bankAccount {
     this.status = true;
   }
 
-  newLimit(value) {
+  // Define um novo limite para a conta
+  setLimit(value) {
     if (value < 0) {
       return "invalid value";
     } else {
       this.limit = value;
     }
   }
-  statusLimit(condition) {
-    if (condition === true) {
+
+  // Ativa ou desativa o limite da conta
+  setStatus(condition) {
+    if (condition) {
       this.status = true;
-    } else if (condition === false) {
+    } else if (!condition) {
       this.status = false;
     } else {
       return "invalid value";
     }
   }
-  withdrawValue(value) {
+
+  // Realiza um saque na conta
+  withdraw(value) {
     let balanceAvailable = this.limit + this.balance;
 
-    if (this.balance >= value) {
-      this.balance -= value;
-    } else if (
-      this.balance < value &&
-      balanceAvailable >= value &&
-      this.status == true
+    if (
+      this.balance >= value ||
+      (this.balance < value && balanceAvailable >= value && this.status == true)
     ) {
       this.balance -= value;
     } else {
       return "Insufficient balance or disabled limit";
     }
   }
-  putValue(value) {
+
+  // Realiza um depósito na conta
+  deposit(value) {
     if (value <= 0) {
       return "invalid value";
     } else {
