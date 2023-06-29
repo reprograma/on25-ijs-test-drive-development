@@ -11,36 +11,56 @@ do cliente ficará negativo após o saque. Além disso, o limite de uma conta po
 (para mais e para menos) ou desativado. Use a abordagem Red - Green - Refactor para desenvolver
 essa aplicação.
 */
-class ContaBancaria {
-    constructor(nome, saldo, limite, saque, deposito) {
-        this.nome = nome;
-        this.saldo = saldo;
-        this.limite = limite;
-        this.saque = saque;
-        this.deposito = deposito;
+function ContaBancaria(nome, saldo, limite) {
+    this.nome = nome;
+    this.saldo = saldo;
+    this.limite = limite;
+}
+
+const limiteMax = 300;
+const limiteMin = 0;
+
+function depositar(conta, valorDeposito) {
+  if(conta.saldo > 0 && conta.limite == limiteMax){
+      conta.saldo += valorDeposito
+      return conta
+  } else if (conta.limite < limiteMax){
+      conta.limite += valorDeposito
+      return conta
+  } else {
+    if (conta.limite < limiteMax && conta.saldo <= 0){
+          conta.limite += valorDeposito
+          return conta
+      } else {
+          conta.saldo += valorDeposito
+          return conta
+      }
+  }
+}
+
+function sacar(conta, valorSaque) {
+
+    if (conta.saldo >= valorSaque) {
+        conta.saldo -= valorSaque
+        return conta
+    } else if (conta.limite > valorSaque) {
+        conta.limite -= valorSaque
+        return conta
     }
 }
 
-function depositar(valorDeposito) {
-    valorDeposito = 200;
-    this.deposito += valorDeposito;
+function consultarSaldo(conta) {
+
+    return conta.saldo + conta.limite
+
 }
 
-function sacar(valorSaque) {
-    valorSaque = 100;
-    this.saque -= valorSaque ;
+
+module.exports = {
+    ContaBancaria,
+    consultarSaldo,
+    sacar,
+    depositar
 }
-
-function atualizarSaldo(saldo) {
-
-    if(saque){
-        this.saldo = saldo - sacar
-    } else {
-        saldo = saldo + depositar
-    }
-  
-}
-
-module.exports = ContaBancaria
 
 
