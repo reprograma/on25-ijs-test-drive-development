@@ -9,7 +9,7 @@ titular, o saldo e o limite da conta. É possível fazer operações de consulta
 const { ContaBancaria, consultarSaldo, sacar, depositar } = require('./contaBancaria')
 
 describe("Verificar saldo", () => {
-    it("Verifica se o contultar salto retona saldo + limite.", () => {
+    it("Verifica se o consultar saldo retona saldo + limite.", () => {
         let conta = new ContaBancaria("Carol", 100, 300)
 
         expect(consultarSaldo(conta)).toEqual(400)
