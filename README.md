@@ -1,4 +1,4 @@
-Conta Bancária 💰
+# Conta Bancária 💰
 
 Esta aplicação implementa uma classe `bankAccount` que representa uma conta bancária. Com ela, você pode consultar o saldo, sacar, depositar e ajustar o limite da conta.
 
