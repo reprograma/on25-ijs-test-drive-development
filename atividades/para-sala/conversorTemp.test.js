@@ -1,7 +1,7 @@
 const convertCelsiusToFahrenheit = require('./conversorTemp');
 
-describe('verify convert function', () => {
-    it("should check conversion to fahrenheit", () => {
-        expect(convertCelsiusToFahrenheit(60).toEqual(140))
+describe(" Verify convert function", () => {
+    it(" should check conversion to fahrenheit", () => {
+        expect(convertCelsiusToFahrenheit(60)).toEqual(140);
     })
 })
