@@ -9,6 +9,6 @@ describe ("function check balance", () => {
         saldo: 10000
     }
     test("consultarSaldo deve retornar o saldo da conta bancária", () => {
-        expect(consultarSaldo()).toEqual(10000);
+        expect(consultarSaldo(contaBancaria.saldo)).toEqual(10000);
     });
 })
