@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 function fibonacciSeq(index, tam){
 
     const fibonacci = [0,1];
@@ -12,3 +13,5 @@ function fibonacciSeq(index, tam){
 console.log(fibonacciSeq(6, 7))
 
 module.exports = fibonacciSeq
+=======
+>>>>>>> 67e3fb4f323fefb153fdbb721c71526b4a58deb2

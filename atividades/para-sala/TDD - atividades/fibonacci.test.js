@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Escreva um teste para uma função que dado um índice (0) e o tamanho do array,
  retorne a Sequência de Fibonacci iniciando no índice e finalizando depois do tamanho
 especificado para o array */
@@ -12,3 +13,6 @@ describe("fibonacci function", () => {
     expect(fibonacciSeq(6,7)).toEqual(output);
     });
 })
+=======
+
+>>>>>>> 67e3fb4f323fefb153fdbb721c71526b4a58deb2

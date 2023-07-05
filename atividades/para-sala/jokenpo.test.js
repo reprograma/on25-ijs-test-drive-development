@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 const jokenpo = require ('./jokenpo');
 
+=======
+const jokenpo = require("./jokenpo")
+>>>>>>> 67e3fb4f323fefb153fdbb721c71526b4a58deb2
 
 describe('jokenpo function', () => {
     test("should check if players tie", () => {
