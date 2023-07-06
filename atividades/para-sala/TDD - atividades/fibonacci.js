@@ -15,7 +15,6 @@ function fibonacciSeq(index, tam) {
     return fibonacci.slice(index, index + tam);
 }
 
-console.log(fibonacciSeq(6, 7))
-
+console.log(fibonacciSeq(6, 7));
 
 module.exports = fibonacciSeq

@@ -1,22 +1,22 @@
-const checkEvenNumber = require('./numeroPar')
 
+const checkEvenNumber = require ('./numeroPar');
 
-describe("Even number function", () => {
-    test("it should check if number 2 is even", () => {
-      const output = "2 é um número par";
+describe("verify is numbers", ()=>{
+     test("should check if is not a number", () =>{
+        let valorString = "oi";
+        const output = valorString + " não é um número";
+        expect(checkEvenNumber(valorString)).toEqual(output)
+      });
+    test("shoul check if the number is even", () => {
+        let number = 18
+         const output = number + " é um número par";
+        expect(checkEvenNumber(number)).toEqual(output);
+     });
 
-      expect(checkEvenNumber(2)).toEqual(output);
-    });
+     test("shoul check if the number is odd", () => {
+        let numberOdd = 7;
+        const output = numberOdd + " é um número ímpar";
+        expect(checkEvenNumber(numberOdd)).toEqual(output);
+     })
+})
 
-    test("it should check if number 1 is even", () => {
-      const output = "1 é um número ímpar";
-
-      expect(checkEvenNumber(1)).toEqual(output);
-    });
-
-    test("it should check if number n is even", () => {
-      const output = "n não é um número";
-
-      expect(checkEvenNumber('n')).toEqual(output);
-    });
-  })
